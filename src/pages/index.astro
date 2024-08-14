@@ -1,9 +1,12 @@
 ---
+import Header from '../components/Header';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="mods-website">
 	<main>
-		<h1 class="font-bold text-white text-5xl text-center mt-5">{"mods-website".toLocaleUpperCase()}</h1>
+		<Header></Header>
+		<h1 class="font-bold text-text_primary text-5xl text-center mt-5">{"mods-website".toLocaleUpperCase()}</h1>
+		<div class="min-h-[100vh] w-full"></div>
 	</main>
 </Layout>
