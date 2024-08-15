@@ -1,14 +1,18 @@
 ---
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import SearchMod from '../components/SearchMod';
+import StatisticsCount from '../components/StatisticsCount';
 import Layout from '../layouts/Layout.astro';
+
 ---
 
 <Layout title="mods-website">
 	<main class="flex flex-col gap-10">
 		<Header></Header>
+		<StatisticsCount></StatisticsCount>
 		<SearchMod client:load></SearchMod>	
-		</div>
 		<div class="min-h-[100vh] w-full"></div>
+		<Footer></Footer>
 	</main>
 </Layout>

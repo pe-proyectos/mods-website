@@ -25,7 +25,7 @@ export const CardMod: React.FC<CardModProps> = ({
   timeAgo,
 }) => {
   return (
-    <div className="max-w-[370px] bg-secundary rounded-xl overflow-hidden  ">
+    <div className="max-w-[370px] min-w-[300px]   bg-secundary rounded-xl overflow-hidden  ">
       <figure className="w-full overflow-hidden object-cover relative h-[40%] min-h-[200px]">
         <img src={img} alt={title} className="opacity-80" />
         <p className="absolute right-3 top-3 bg-[#1d1c1c63] px-3 py-0.5 rounded-md text-xs ">

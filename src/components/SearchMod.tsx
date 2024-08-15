@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { CardMod } from './Cards';
+import dataMod from '../constants/dataMods.json';
 import { Pagination } from './Pagination';
 const SearchMod = () => {
   return (
@@ -53,6 +54,25 @@ const SearchMod = () => {
       </div>
 
       <Pagination total={5} selected={1} />
+
+      <div className="w-[88%]  mt-5 grid grid-flow-row gap-x-2 gap-y-5  grid-cols-3  max-[1450px]:w-full  max-xl:w-[75%]   max-xl:grid-cols-2   max-[1150px]:w-[85%] max-[1000px]:w-[95%] max-[900px]:grid-cols-1      justify-items-center">
+        {dataMod.map((item) => {
+          return (
+            <CardMod
+              key={item.id}
+              id={item.id}
+              title={item.title}
+              type={item.type}
+              img={item.img}
+              owner={item.owner}
+              score={item.score}
+              abstract={item.abstract}
+              downloadNumbers={item.downloadNumbers}
+              timeAgo={item.timeAgo}
+            />
+          );
+        })}
+      </div>
     </section>
   );
 };
