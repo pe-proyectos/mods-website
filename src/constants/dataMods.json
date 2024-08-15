@@ -1,35 +1,112 @@
 [
   {
-    "id": "12345",
-    "title": "Amazing Project",
+    "id": "22345",
+    "title": "Innovative App",
     "type": "Design",
     "img": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2023/02/sons-of-the-forest.jpeg?fit=1920%2C1080&quality=50&strip=all&ssl=1",
-    "owner": "John Doe",
-    "score": 4.8,
-    "abstract": "This is a brief summary of the amazing project that showcases innovative design principles and cutting-edge technology.",
-    "downloadNumbers": 1500,
-    "timeAgo": 3
+    "owner": "Jane Smith",
+    "score": 4.9,
+    "abstract": "A groundbreaking app with a focus on sleek design and user experience.",
+    "downloadNumbers": 3000,
+    "timeAgo": 2
   },
   {
-    "id": "123456",
-    "title": "Amazing Project",
-    "type": "Design",
-    "img": "https://media.vandal.net/m/5-2023/202352917152528_1.jpg",
-    "owner": "John Doe",
-    "score": 4.8,
-    "abstract": "This is a brief summary of project that showcases innovative design principles and cutting-edge technology.",
-    "downloadNumbers": 1500,
-    "timeAgo": 3
-  },
-  {
-    "id": "1234567",
-    "title": "Amazing Project",
+    "id": "223456",
+    "title": "Creative Platform",
     "type": "Quality of Life",
+    "img": "https://media.vandal.net/m/5-2023/202352917152528_1.jpg",
+    "owner": "Alice Johnson",
+    "score": 4.7,
+    "abstract": "A platform that enhances daily productivity through innovative tools.",
+    "downloadNumbers": 2000,
+    "timeAgo": 1
+  },
+  {
+    "id": "2234567",
+    "title": "Eco-Friendly Solution",
+    "type": "Sustainability",
     "img": "https://assetsio.gnwcdn.com/Sons-of-the-Forest-Holey-Header.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
-    "owner": "John Doe",
+    "owner": "Bob Williams",
     "score": 4.8,
-    "abstract": "This is a brief of the amazing project that showcases innovative design principles and cutting-edge technology.",
+    "abstract": "An eco-friendly project designed to reduce carbon footprint.",
+    "downloadNumbers": 2500,
+    "timeAgo": 5
+  },
+  {
+    "id": "32345",
+    "title": "Health Tracker",
+    "type": "Health",
+    "img": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2023/02/sons-of-the-forest.jpeg?fit=1920%2C1080&quality=50&strip=all&ssl=1",
+    "owner": "Clara Evans",
+    "score": 4.9,
+    "abstract": "A health tracker that provides detailed insights into your well-being.",
+    "downloadNumbers": 3200,
+    "timeAgo": 3
+  },
+  {
+    "id": "323456",
+    "title": "Educational Game",
+    "type": "Education",
+    "img": "https://media.vandal.net/m/5-2023/202352917152528_1.jpg",
+    "owner": "Daniel Martinez",
+    "score": 4.6,
+    "abstract": "A fun and interactive game that makes learning enjoyable for kids.",
+    "downloadNumbers": 1800,
+    "timeAgo": 2
+  },
+  {
+    "id": "3234567",
+    "title": "Smart Home System",
+    "type": "Technology",
+    "img": "https://assetsio.gnwcdn.com/Sons-of-the-Forest-Holey-Header.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
+    "owner": "Emma Thompson",
+    "score": 4.8,
+    "abstract": "A smart home system that integrates seamlessly with your daily life.",
+    "downloadNumbers": 2900,
+    "timeAgo": 4
+  },
+  {
+    "id": "42345",
+    "title": "Fitness App",
+    "type": "Health",
+    "img": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2023/02/sons-of-the-forest.jpeg?fit=1920%2C1080&quality=50&strip=all&ssl=1",
+    "owner": "George Brown",
+    "score": 4.8,
+    "abstract": "A fitness app that offers personalized workout plans and tracking.",
+    "downloadNumbers": 2700,
+    "timeAgo": 2
+  },
+  {
+    "id": "423456",
+    "title": "Cooking App",
+    "type": "Lifestyle",
+    "img": "https://media.vandal.net/m/5-2023/202352917152528_1.jpg",
+    "owner": "Henry Wilson",
+    "score": 4.7,
+    "abstract": "An app that provides recipes and cooking tips for home chefs.",
     "downloadNumbers": 1500,
     "timeAgo": 3
+  },
+  {
+    "id": "4234567",
+    "title": "Travel Planner",
+    "type": "Travel",
+    "img": "https://assetsio.gnwcdn.com/Sons-of-the-Forest-Holey-Header.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp",
+    "owner": "Isabella Clark",
+    "score": 4.9,
+    "abstract": "A travel planner that helps you organize your trips efficiently.",
+    "downloadNumbers": 3500,
+    "timeAgo": 1
+  },
+  {
+    "id": "52345",
+    "title": "Mindfulness App",
+    "type": "Health",
+    "img": "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2023/02/sons-of-the-forest.jpeg?fit=1920%2C1080&quality=50&strip=all&ssl=1",
+    "owner": "Jack Davis",
+    "score": 4.8,
+    "abstract": "An app designed to help you practice mindfulness and meditation.",
+    "downloadNumbers": 2400,
+    "timeAgo": 2
   }
 ]
