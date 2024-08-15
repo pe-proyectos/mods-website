@@ -7,6 +7,7 @@ module.exports = {
         secundary: '#171212',
         text_primary: '#CBC9C9',
         shadow: '#312F2F',
+        btn_primary: '#18A094',
       },
     },
   },
