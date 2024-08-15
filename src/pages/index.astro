@@ -1,52 +1,13 @@
 ---
-import { CardMod } from '../components/Cards';
 import Header from '../components/Header';
+import SearchMod from '../components/SearchMod';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="mods-website">
-	<main>
+	<main class="flex flex-col gap-10">
 		<Header></Header>
-		<h1 class="font-bold text-text_primary text-5xl text-center mt-5">{"mods-website".toLocaleUpperCase()}</h1>
-
-		<div class=" px-32 mt-5 grid grid-flow-row grid-cols-3  ">
-			<CardMod 
-				id="12345"
-				title="Amazing Project"
-				type="Design"
-				img="https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2023/02/sons-of-the-forest.jpeg?fit=1920%2C1080&quality=50&strip=all&ssl=1"
-				owner="John Doe"
-				score={4.8}
-				abstract="This is a brief summary of the amazing project that showcases innovative design principles and cutting-edge technology."
-				downloadNumbers={1500}
-				timeAgo={3}
-				client:load
-				/>
-				<CardMod 
-				id="12345"
-				title="Amazing Project"
-				type="Design"
-				img="https://media.vandal.net/m/5-2023/202352917152528_1.jpg"
-				owner="John Doe"
-				score={4.8}
-				abstract="This is a brief summary of  project that showcases innovative design principles and cutting-edge technology."
-				downloadNumbers={1500}
-				timeAgo={3}
-                client:load
-
-				/>
-				<CardMod 
-				id="12345"
-				title="Amazing Project"
-				type="Quality of Life"
-				img="https://assetsio.gnwcdn.com/Sons-of-the-Forest-Holey-Header.jpg?width=1200&height=630&fit=crop&enable=upscale&auto=webp"
-				owner="John Doe"
-				score={4.8}
-				abstract="This is a brief of the amazing project that showcases innovative design principles and cutting-edge technology."
-				downloadNumbers={1500}
-				timeAgo={3}
-				client:load
-				/>
+		<SearchMod client:load></SearchMod>	
 		</div>
 		<div class="min-h-[100vh] w-full"></div>
 	</main>
