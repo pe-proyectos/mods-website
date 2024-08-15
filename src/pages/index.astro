@@ -1,4 +1,5 @@
 ---
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import SearchMod from '../components/SearchMod';
 import StatisticsCount from '../components/StatisticsCount';
@@ -12,5 +13,6 @@ import Layout from '../layouts/Layout.astro';
 		<StatisticsCount></StatisticsCount>
 		<SearchMod client:load></SearchMod>	
 		<div class="min-h-[100vh] w-full"></div>
+		<Footer></Footer>
 	</main>
 </Layout>
