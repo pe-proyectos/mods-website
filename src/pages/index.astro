@@ -9,11 +9,8 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="mods-website">
-	<main class="flex flex-col gap-5">
-		<Header></Header>
 		<WeekMods client:load></WeekMods>
 		<StatisticsCount></StatisticsCount>
 		<SearchMod client:load></SearchMod>	
-		<Footer></Footer>
-	</main>
+
 </Layout>
