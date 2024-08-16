@@ -3,7 +3,7 @@ import { CardWeekMod } from './Cards';
 import dataWeekMod from '../constants/dataWeekMods.json';
 const WeekMods = () => {
   return (
-    <section className="w-[90%] mx-auto flex flex-col gap-8 items-center">
+    <section className="w-[90%] mx-auto flex flex-col gap-8 items-center  max-[830px]:hidden">
       <h2 className="text-text_primary text-4xl font-semibold">Mods de la semana</h2>
       <div className="flex flex-wrap justify-around  min-h-64">
         {dataWeekMod.map((item) => {
