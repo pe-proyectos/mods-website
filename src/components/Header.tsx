@@ -1,6 +1,7 @@
 import React from 'react';
 import { AiOutlineGlobal } from 'react-icons/ai';
 import { FaDiscord } from 'react-icons/fa';
+import { navigateTo } from '../utils/navigate';
 
 import lenguagues from '../constants/languages.json';
 const Header = () => {
@@ -82,10 +83,22 @@ const Header = () => {
             className="dropdown-content menu bg-secundary rounded-box z-[1] w-48 px-2 py-1 shadow"
           >
             <li className="font-normal text-[14px] ">
-              <a>{'Iniciar sesión'}</a>
+              <a
+                onClick={() => {
+                  navigateTo('/login');
+                }}
+              >
+                {'Iniciar sesión'}
+              </a>
             </li>
             <li className="font-normal text-[14px] ">
-              <a>{'Registrarse'}</a>
+              <a
+                onClick={() => {
+                  navigateTo('/register');
+                }}
+              >
+                {'Registrarse'}
+              </a>
             </li>
           </ul>
         </div>
