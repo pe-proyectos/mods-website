@@ -102,15 +102,17 @@ export const CardWeekMod: React.FC<CardWeekModProps> = ({
       <img src={img} alt={title} className=" h-[225px]" />
       <div
         className={
-          'w-full min-w-[300px] min-h-[225px] absolute top-0  bg-[#000000bc] flex flex-col justify-between gap-2  py-8 px-5 ' +
+          'w-full min-w-[300px] min-h-[225px] absolute top-0  bg-[#000000bc] flex flex-col justify-between gap-2  py-8 px-[14px] ' +
           (isHovered ? ' block' : ' hidden')
         }
       >
         <div className="flex flex-col gap-2">
-          <div className="flex flex-row gap-1 items-center">
-            <p className="text-white font-bold text-4xl">#{topNumber}</p>
-            <p className="text-text_blue text-xl font-semibold">{title}</p>
-            <sup className="text-text_blue ">{`by ${owner}`}</sup>
+          <div className="flex flex-row gap-1 items-center  ">
+            <p className="text-white font-bold text-4xl mr-1">#{topNumber}</p>
+            <p className="text-text_blue text-xl font-semibold line-clamp-2 text-ellipsis w-fit    ">
+              {title}
+            </p>
+            <sup className="text-text_blue  h-full line-clamp-2 text-ellipsis text-xs ">{`by ${owner}`}</sup>
           </div>
 
           <p className="text-text_primary line-clamp-3 text-ellipsis ">{abstract}</p>
