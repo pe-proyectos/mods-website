@@ -1,5 +1,6 @@
 import { HiMiniArrowTrendingUp } from 'react-icons/hi2';
 import { PiTimerFill } from 'react-icons/pi';
+import useHover from '../utils/useHover';
 
 interface CardModProps {
   id: string;
@@ -63,5 +64,64 @@ export const CardMod: React.FC<CardModProps> = ({
         </div>
       </div>
     </div>
+  );
+};
+
+interface CardWeekModProps {
+  topNumber: number;
+  id: string;
+  title: string;
+  img: string;
+  owner: string;
+  abstract: string;
+  downloadNumbersWeek: number;
+  downloadNumbersTotal: number;
+}
+
+export const CardWeekMod: React.FC<CardWeekModProps> = ({
+  topNumber,
+  id,
+  title,
+  img,
+  owner,
+  abstract,
+  downloadNumbersWeek,
+  downloadNumbersTotal,
+}) => {
+  const { handleMouseEnter, handleMouseLeave, isHovered } = useHover();
+
+  return (
+    <a
+      className="mb-5 max-w-[370px] min-w-[300px] min-h-[225px]    rounded-xl   overflow-hidden object-cover relative cursor-pointer"
+      onClick={() => {
+        alert(id);
+      }}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <img src={img} alt={title} className=" h-[225px]" />
+      <div
+        className={
+          'w-full min-w-[300px] min-h-[225px] absolute top-0  bg-[#000000bc] flex flex-col justify-between gap-2  py-8 px-5 ' +
+          (isHovered ? ' block' : ' hidden')
+        }
+      >
+        <div className="flex flex-col gap-2">
+          <div className="flex flex-row gap-1 items-center">
+            <p className="text-white font-bold text-4xl">#{topNumber}</p>
+            <p className="text-text_blue text-xl font-semibold">{title}</p>
+            <sup className="text-text_blue ">{`by ${owner}`}</sup>
+          </div>
+
+          <p className="text-text_primary line-clamp-3 text-ellipsis ">{abstract}</p>
+        </div>
+
+        <p className="text-[15px] text-text_primary ">
+          <span className="text-text_green "> {`${downloadNumbersWeek} `}</span>
+          descargas en la última semana
+          <span className="text-text_greenBlue">{` (${downloadNumbersTotal} total)`}</span>
+        </p>
+      </div>
+    </a>
   );
 };

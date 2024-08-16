@@ -3,16 +3,17 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import SearchMod from '../components/SearchMod';
 import StatisticsCount from '../components/StatisticsCount';
+import WeekMods from '../components/WeekMods';
 import Layout from '../layouts/Layout.astro';
 
 ---
 
 <Layout title="mods-website">
-	<main class="flex flex-col gap-10">
+	<main class="flex flex-col gap-5">
 		<Header></Header>
+		<WeekMods client:load></WeekMods>
 		<StatisticsCount></StatisticsCount>
 		<SearchMod client:load></SearchMod>	
-		<div class="min-h-[100vh] w-full"></div>
 		<Footer></Footer>
 	</main>
 </Layout>
