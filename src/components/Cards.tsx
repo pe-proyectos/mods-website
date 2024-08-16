@@ -127,3 +127,57 @@ export const CardWeekMod: React.FC<CardWeekModProps> = ({
     </a>
   );
 };
+
+interface CardDownloadModProps {
+  id: string;
+  img: string;
+  abstract: string;
+  followers: number;
+  currentVersion: string;
+  downloadLink: string;
+  timeAgo: string;
+  downloadNumbers: number;
+}
+
+export const CardDownloadMod: React.FC<CardDownloadModProps> = ({
+  id,
+  img,
+  abstract,
+  currentVersion,
+  downloadLink,
+  downloadNumbers,
+  followers,
+  timeAgo,
+}) => {
+  return (
+    <div className="w-[full] flex flex-col bg-secundary rounded-lg items-center gap-4 p-3 overflow-hidden ">
+      <img
+        src={img}
+        className="rounded-lg object-cover h-[350px]  max-sm:min-h-[200px] max-[540px]:min-h-[150px] w-full "
+      />
+      <p className="max-[540px]:text-center">{abstract}</p>
+      <div className="flex flex-row items-center gap-5 justify-center   max-[540px]:flex-col max-[540px]:w-full ">
+        <button className="btn btn-outline btn-accent rounded-full min-w-[200px]  max-[540px]:w-3/4">
+          Descarga Directa
+        </button>
+        <button className="btn btn-outline btn-success rounded-full min-w-[200px] max-[540px]:w-3/4">
+          Insalación en un click
+        </button>
+      </div>
+      <div className="flex flex-row gap-3  text-xs max-[540px]:flex-col  ">
+        <div className="flex flex-row gap-3 ">
+          <p className="flex flex-row gap-2 text-btn_primary">
+            <HiMiniArrowTrendingUp className="size-4 " />
+            {`${downloadNumbers} descargas`}
+          </p>
+          <p className="flex flex-row gap-2 text-text_greenBlue">{`${followers} seguidores`}</p>
+        </div>
+
+        <p className="flex flex-row gap-2 opacity-70">
+          <PiTimerFill className="size-4 " />
+          {`Versión  ${currentVersion} lanzado ${timeAgo} ago`}
+        </p>
+      </div>
+    </div>
+  );
+};
