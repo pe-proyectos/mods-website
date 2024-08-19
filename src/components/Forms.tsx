@@ -333,3 +333,23 @@ export const FormUploadMod: React.FC<{}> = () => {
     </div>
   );
 };
+
+export const FormRecoverPassword: React.FC<{}> = () => {
+  return (
+    <form className="bg-secundary  w-full flex flex-col gap-8 p-8 items-center max-[900px]:p-6 max-[500px]:p-4  ">
+      <label className="form-control w-full m">
+        <div className="label">
+          <span className="label-text">Correo electrónico</span>
+        </div>
+        <input
+          type="text"
+          placeholder="Ingresa tu correo electrónico"
+          className="input input-bordered w-full bg-transparent rounded-full"
+        />
+      </label>
+      <button className="btn btn-success bg-text_green hover:bg-[#18A048] w-[300px] rounded-full  max-[500px]:w-full  ">
+        Recuperar Cuenta
+      </button>
+    </form>
+  );
+};
