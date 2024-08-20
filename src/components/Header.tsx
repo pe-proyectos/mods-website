@@ -33,10 +33,18 @@ const Header = () => {
       <div className="flex flex-row items-center  text-text_primary font-semibold text-[14px] h-full">
         <a
           className="cursor-pointer hover:bg-shadow px-5 max-sm:px-2.5  h-full content-center rounded-md flex flex-row gap-2 items-center"
-          href="/"
+          onClick={() => {
+            navigateTo('/loader');
+          }}
         >
-          <img src="/images/redlogo.png " className="w-14 hidden max-sm:block" />
-          <p className="max-sm:hidden"> Red Loader</p>
+          <img
+            src="/images/redlogo.png "
+            className="w-14 hidden max-sm:block"
+            onClick={() => {
+              navigateTo('/register');
+            }}
+          />
+          <p className="max-sm:hidden">Red Loader</p>
         </a>
 
         <a

@@ -8,10 +8,11 @@ interface CardModProps {
   type: string;
   img: string;
   owner: string;
-  score: number;
+  version: number | string;
   abstract: string;
   downloadNumbers: number;
-  timeAgo: number;
+  timeAgo: number | string;
+  nsfw: boolean;
 }
 
 export const CardMod: React.FC<CardModProps> = ({
@@ -20,24 +21,34 @@ export const CardMod: React.FC<CardModProps> = ({
   type,
   img,
   owner,
-  score,
+  version,
   abstract,
   downloadNumbers,
   timeAgo,
+  nsfw,
 }) => {
   return (
     <div className="max-w-[370px] min-w-[300px]   bg-secundary rounded-xl overflow-hidden  ">
-      <figure className="w-full overflow-hidden object-cover relative h-[40%] min-h-[200px]">
-        <img src={img} alt={title} className="opacity-80" />
-        <p className="absolute right-3 top-3 bg-[#1d1c1c63] px-3 py-0.5 rounded-md text-xs ">
-          {type}
-        </p>
+      <figure className="w-full overflow-hidden object-cover relative h-[40%] min-h-[220px]">
+        <img src={img} alt={title} className="opacity-80 " />
+        {nsfw ? (
+          <div className="absolute right-3 top-3 flex gap-2">
+            <p className=" bg-[#1d1c1c63] px-3 py-0.5 rounded-md text-xs ">{type}</p>
+            <p className=" bg-transparent  border-text_greenBlue  border text-text_greenBlue  px-3 py-0.5 rounded-md text-xs ">
+              {'NSFW'}
+            </p>
+          </div>
+        ) : (
+          <p className="absolute right-3 top-3 bg-[#1d1c1c63] px-3 py-0.5 rounded-md text-xs ">
+            {type}
+          </p>
+        )}
       </figure>
       <div className="w-full flex flex-col gap-2 py-2 px-4 text-text_primary ">
         <div className="w-full">
           <p className="flex flex-row gap-2 items-center">
             <span className="font-semibold text-xl">{title}</span>
-            <sup className="text-[#09CDB3]">{score}</sup>
+            <sup className="text-[#09CDB3]">{version}</sup>
           </p>
         </div>
         <p className="text-[14px]">
@@ -47,7 +58,9 @@ export const CardMod: React.FC<CardModProps> = ({
         <div className="w-full flex justify-end">
           <button
             className="btn btn-outline btn-accent py-1 min-h-[2.5rem] h-[2.5rem]"
-            onClick={() => alert(`ID: ${id}`)}
+            onClick={() => {
+              if (id !== '-1') alert(`ID: ${id}`);
+            }}
           >
             Ver más
           </button>

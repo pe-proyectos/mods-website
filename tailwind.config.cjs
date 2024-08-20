@@ -1,3 +1,5 @@
+import { colorForIntegration } from 'astro/runtime/client/dev-toolbar/apps/utils/icons.js';
+
 module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,tsx,vue}'],
   theme: {
@@ -11,11 +13,25 @@ module.exports = {
         text_greenBlue: '#1DB88E',
         text_green: '#1EB854',
         text_blue: '#1DB8AB',
+        success: '#1EB854',
       },
     },
   },
   plugins: [require('daisyui')],
   daisyui: {
-    themes: ['light', 'dark'],
+    themes: [
+      {
+        light: {
+          ...require('daisyui/src/theming/themes')['light'],
+          '--success': '100% 0.2 295',
+        },
+      },
+      {
+        dark: {
+          ...require('daisyui/src/theming/themes')['dark'],
+          '--success': '100% 0.2 289',
+        },
+      },
+    ],
   },
 };

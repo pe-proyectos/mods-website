@@ -65,10 +65,11 @@ const SearchMod = () => {
               type={item.type}
               img={item.img}
               owner={item.owner}
-              score={item.score}
+              version={item.score}
               abstract={item.abstract}
               downloadNumbers={item.downloadNumbers}
               timeAgo={item.timeAgo}
+              nsfw={item.nsfw}
             />
           );
         })}
