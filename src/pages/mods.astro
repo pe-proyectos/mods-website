@@ -1,17 +1,17 @@
 ---
 import { CardDownloadMod } from "../components/Cards";
 import Layout from "../layouts/Layout.astro";
-import {TableHistoryVersion} from "../components/Tables"
-const dataExample={
-
+import { TableHistoryVersion } from "../components/Tables";
+import { Modal } from "../components/Modal";
+const dataExample = {
 	title: "Enable Building in Caves",
 	owner: "GLaD0S",
 	img: "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2023/02/sons-of-the-forest.jpeg?fit=1920%2C1080&quality=50&strip=all&ssl=1",
 	abstract: "Allows building in caves and removes parts of cave entrances",
-    score: 4.9,
-    downloadNumbers: 3000,
+	score: 4.9,
+	downloadNumbers: 3000,
 	followers: 0,
-    timeAgo: "2 days",
+	timeAgo: "2 days",
 	currentVersion: "2.0.3",
 	instructions: `Un texto es una composición de signos codificados en un sistema de escritura que forma una unidad de sentido. También es una composición de caracteres imprimibles (con grafema) generados por un algoritmo de cifrado que, aunque no tienen sentido para cualquier persona, sí puede ser descifrado por su destinatario original. En otras palabras, un texto es un entramado de signos con una intención comunicativa que adquiere sentido en determinado contexto.
 	Las ideas que comunica un texto están contenidas en lo que se suele denominar «macroproposiciones», unidades estructurales de nivel superior o global, que otorgan coherencia al texto constituyendo su hilo central, el esqueleto estructural que cohesiona elementos lingüísticos formales de alto nivel, como los títulos y subtítulos, la secuencia de párrafos, etc. En contraste, las «microproposiciones» son los elementos coadyuvantes de la cohesión de un texto, pero a nivel más particular o local. Esta distinción fue realizada por Teun van Dijk en 1980.1​
@@ -30,71 +30,89 @@ También es un conjunto de oraciones agrupadas en párrafos que habla de un tema
 
 
 `,
-	historyVersion :[
-  {
-    "version": "1.1.2",
-    "description": "Switching savegame shouldn't break the mod anymore",
-    "downloadNumbers": 5766
-  },
-  {
-    "version": "1.1.1",
-    "description": "Fixed for 1.0",
-    "downloadNumbers": 3263
-  },
-  {
-    "version": "1.1.0",
-    "description": "Added size control in mod settings",
-    "downloadNumbers": 3628
-  },
-  {
-    "version": "1.0.0",
-    "description": "First release",
-    "downloadNumbers": 65
-  }
-]
+	historyVersion: [
+		{
+			version: "1.1.2",
+			description: "Switching savegame shouldn't break the mod anymore",
+			downloadNumbers: 5766,
+		},
+		{
+			version: "1.1.1",
+			description: "Fixed for 1.0",
+			downloadNumbers: 3263,
+		},
+		{
+			version: "1.1.0",
+			description: "Added size control in mod settings",
+			downloadNumbers: 3628,
+		},
+		{
+			version: "1.0.0",
+			description: "First release",
+			downloadNumbers: 65,
+		},
+	],
 
-	// agregar mas props 
-}
-
-
+	// agregar mas props
+};
 ---
 
 <Layout title={dataExample.title}>
-
-	<div class="flex flex-col gap-1 text-text_primary mx-auto items-center ">
-		<h1 class="text-5xl mt-2 font-semibold max-sm:text-4xl  max-[480px]:text-3xl max-[370px]:text-2xl  ">{dataExample.title}</h1>
-		<p>por <span class="text-text_blue cursor-pointer hover:underline ">{dataExample.owner}</span> </p>
+	<Modal client:only/>
+	<div class="flex flex-col gap-1 text-text_primary mx-auto items-center">
+		<h1
+			class="text-5xl mt-2 font-semibold max-sm:text-4xl max-[480px]:text-3xl max-[370px]:text-2xl"
+		>
+			{dataExample.title}
+		</h1>
+		<p>
+			por <span class="text-text_blue cursor-pointer hover:underline"
+				>{dataExample.owner}</span
+			>
+		</p>
 	</div>
 
-	<div  class="w-full px-10 mx-auto flex flex-row gap-2 mt-3 max-lg:flex-col ">
-		<div class="w-[50%] max-lg:w-full ">
+	<div class="w-full px-10 mx-auto flex flex-row gap-2 mt-3 max-lg:flex-col">
+		<div class="w-[50%] max-lg:w-full">
 			<CardDownloadMod
-				id = "12",
-				img = {dataExample.img} ,
-				abstract ={dataExample.abstract},
-				currentVersion ={dataExample.currentVersion},
-				downloadLink ={"/"},
-				downloadNumbers ={dataExample.downloadNumbers},
-				followers ={dataExample.followers},
-				timeAgo ={dataExample.timeAgo},
+				id="12"
+				,
+				img={dataExample.img}
+				,
+				abstract={dataExample.abstract}
+				,
+				currentVersion={dataExample.currentVersion}
+				,
+				downloadLink={"/"}
+				,
+				downloadNumbers={dataExample.downloadNumbers}
+				,
+				followers={dataExample.followers}
+				,
+				timeAgo={dataExample.timeAgo}
+				,
 			/>
-		</div>	
-		<div class="w-[50%] bg-[#161B22] rounded-lg min-h-[450px]  max-lg:w-full ">
-			<textarea class="w-full bg-transparent min-h-[450px] text-text_primary  font-mono py-5 px-6  text-start" disabled>
+		</div>
+		<div
+			class="w-[50%] bg-[#161B22] rounded-lg min-h-[450px] max-lg:w-full"
+		>
+			<textarea
+				class="w-full bg-transparent min-h-[450px] text-text_primary font-mono py-5 px-6 text-start"
+				disabled
+			>
 				{dataExample.instructions}
 			</textarea>
-		</div>		
-	</div>	
+		</div>
+	</div>
 
-	<div class="w-full px-10 mx-auto flex flex-col gap-5 mt-5  items-center">
-		<p class="text-text_primary text-3xl font-semibold max-sm:text-2xl  max-[480px]:text-3xl max-[370px]:text-xl">Historial de versiones</p>
-		<TableHistoryVersion 
-		HistoryVersionArray={dataExample.historyVersion}
-		/>
-	</div>	
+	<div class="w-full px-10 mx-auto flex flex-col gap-5 mt-5 items-center">
+		<p
+			class="text-text_primary text-3xl font-semibold max-sm:text-2xl max-[480px]:text-3xl max-[370px]:text-xl"
+		>
+			Historial de versiones
+		</p>
+		<TableHistoryVersion HistoryVersionArray={dataExample.historyVersion} />
+	</div>
 
-
-	<div class=" min-h-[10vh] "></div>
-
-	
+	<div class="min-h-[10vh]"></div>
 </Layout>
