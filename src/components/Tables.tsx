@@ -12,7 +12,7 @@ export const TableHistoryVersion: React.FC<TableHistoryVersionComponentProps> = 
   HistoryVersionArray,
 }) => {
   return (
-    <table className="w-3/4 max-lg:w-full border-none bg-secundary text-text_primary ">
+    <table className="size-full border-none bg-secundary text-text_primary ">
       <thead>
         <tr>
           <th className="px-4 py-2 border-none opacity-70">Versión</th>
