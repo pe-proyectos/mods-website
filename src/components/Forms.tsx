@@ -1,7 +1,7 @@
-import React, { useState, type ChangeEvent } from 'react';
-import { navigateTo } from '../utils/navigate';
-import { CardMod } from './Cards';
-import { validateZipFile } from '../utils/managmentFiles';
+import React, { useState, type ChangeEvent } from "react";
+import { navigateTo } from "../utils/navigate";
+import { CardMod } from "./Cards";
+import { validateZipFile } from "../utils/managmentFiles";
 
 export const FormLogin: React.FC<{}> = () => {
   return (
@@ -30,10 +30,10 @@ export const FormLogin: React.FC<{}> = () => {
       <p
         className="text-text_primary text-xs underline cursor-pointer hover:opacity-80 rounded-full w-[300px] max-[500px]:w-full "
         onClick={() => {
-          navigateTo('/register');
+          navigateTo("/register");
         }}
       >
-        {'!Regítrate Aquí'}
+        {"!Regítrate Aquí"}
       </p>
 
       <button className="btn btn-success bg-text_green hover:bg-[#18A048] w-[300px] rounded-full  max-[500px]:w-full  ">
@@ -107,18 +107,18 @@ export const FormUploadMod: React.FC<{}> = () => {
   }
 
   const [inputValuesMod, setInputValuesMod] = useState<InputValuesMod>({
-    title: 'Mod Name',
-    img: '/images/standarImg.png',
-    owner: 'owner',
-    version: '1.0.0',
-    abstract: 'Esta es una descripción del mod.',
+    title: "Mod Name",
+    img: "/images/standarImg.png",
+    owner: "owner",
+    version: "1.0.0",
+    abstract: "Esta es una descripción del mod.",
     downloadNumbers: 0,
-    timeAgo: 'recien lanzado',
+    timeAgo: "recien lanzado",
   });
-  const [type, setType] = useState('Categoría');
+  const [type, setType] = useState("Categoría");
   const [showAccordion, setShowAccordion] = useState(false);
   const [nsfw, setNsfw] = useState(false);
-  const [description, setDescription] = useState('');
+  const [description, setDescription] = useState("");
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setInputValuesMod((prevState) => ({
@@ -143,11 +143,11 @@ export const FormUploadMod: React.FC<{}> = () => {
       try {
         const isValid = await validateZipFile(file);
 
-        if (!isValid) alert('El archivo .zip no contiene manifest.json');
+        if (!isValid) alert("El archivo .zip no contiene manifest.json");
 
         setShowAccordion(true);
       } catch {
-        alert('Error al procesar el archivo .zip');
+        alert("Error al procesar el archivo .zip");
       }
     }
   };
@@ -155,8 +155,8 @@ export const FormUploadMod: React.FC<{}> = () => {
   return (
     <div
       className={
-        'w-[800px] min-h-[82.5vh]  mx-auto gap-10 flex flex-row  justify-center max-[900px]:flex-col-reverse max-[900px]:items-center  ' +
-        (!showAccordion && ' items-center')
+        "w-[800px] min-h-[82.5vh]  mx-auto gap-10 flex flex-row  justify-center max-[900px]:flex-col-reverse max-[900px]:items-center  " +
+        (!showAccordion && " items-center")
       }
     >
       <div className=" flex flex-col gap-5 w-1/2  mx-auto  max-[800px]:w-[60%]  max-[700px]:w-[70%]  max-[700px]:p-4 max-[550px]:w-[90%]  px-8 py-2 bg-secundary">
@@ -256,9 +256,7 @@ export const FormUploadMod: React.FC<{}> = () => {
               <input type="radio" name="my-accordion-4" />
               <div className="collapse-title text-xl font-medium">Imágenes</div>
               <div className="collapse-content flex flex-col gap-1">
-                <p className="text-xs">
-                  Las imágenes deben estar en formato .png, .jpeg o .gif
-                </p>
+                <p className="text-xs">Las imágenes deben estar en formato .png, .jpeg o .gif</p>
                 <label className="form-control w-full max-w-xs">
                   <div className="label">
                     <span className="label-text">Miniatura</span>
@@ -285,7 +283,7 @@ export const FormUploadMod: React.FC<{}> = () => {
 
         <button
           className={
-            'btn btn-outline btn-info rounded-full x' + (!showAccordion && ' btn-disabled')
+            "btn btn-outline btn-info rounded-full x" + (!showAccordion && " btn-disabled")
           }
           tabIndex={-1}
           role="button"
@@ -294,21 +292,19 @@ export const FormUploadMod: React.FC<{}> = () => {
         </button>
       </div>
       <div className="text-text_primary flex flex-col gap-4 w-1/2   max-[900px]:w-3/4  max-[500px]:w-[90%]   max-[900px]:p-6 max-[500px]:p-4  max-[900px]:items-center ">
-        <p className="text-5xl font-bold max-[500px]:text-4xl   ">{'Subir un mod'}</p>
-        <p className="text-text_primary mt-1">
-          Completa los campos para ver cómo se verá tu mod
-        </p>
+        <p className="text-5xl font-bold max-[500px]:text-4xl   ">{"Subir un mod"}</p>
+        <p className="text-text_primary mt-1">Completa los campos para ver cómo se verá tu mod</p>
         <CardMod
-          id={'-1'}
-          title={inputValuesMod.title !== '' ? inputValuesMod.title : 'Mod Name'}
-          type={type !== '' ? type : 'categoria'}
-          img={inputValuesMod.img !== '' ? inputValuesMod.img : '/images/standarImg.png'}
+          id={"-1"}
+          title={inputValuesMod.title !== "" ? inputValuesMod.title : "Mod Name"}
+          type={type !== "" ? type : "categoria"}
+          img={inputValuesMod.img !== "" ? inputValuesMod.img : "/images/standarImg.png"}
           owner={inputValuesMod.owner}
           version={inputValuesMod.version}
           abstract={
-            inputValuesMod.abstract !== ''
+            inputValuesMod.abstract !== ""
               ? inputValuesMod.abstract
-              : 'Esta es una descripción del mod.'
+              : "Esta es una descripción del mod."
           }
           downloadNumbers={inputValuesMod.downloadNumbers}
           timeAgo={inputValuesMod.timeAgo}
@@ -323,8 +319,7 @@ export const FormUploadMod: React.FC<{}> = () => {
             type="text"
             placeholder=""
             className={
-              'input input-bordered w-full max-w-[370px] ' +
-              (!showAccordion && 'input-disabled')
+              "input input-bordered w-full max-w-[370px] " + (!showAccordion && "input-disabled")
             }
             value={description}
           />

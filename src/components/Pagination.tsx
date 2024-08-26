@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-export const Pagination: React.FC<{ total: number; selected: number }> = ({
-  total,
-  selected,
-}) => {
+export const Pagination: React.FC<{ total: number; selected: number }> = ({ total, selected }) => {
   const numbers = Array(total).fill(1);
   const [numSelected, setNumSelected] = useState(selected);
 
@@ -19,8 +16,7 @@ export const Pagination: React.FC<{ total: number; selected: number }> = ({
             key={index}
             onClick={() => onhandleClick(index + 1)}
             className={
-              '  py-1 px-2.5 ' +
-              (index + 1 === numSelected ? 'bg-shadow' : 'hover:bg-zinc-800')
+              "  py-1 px-2.5 " + (index + 1 === numSelected ? "bg-shadow" : "hover:bg-zinc-800")
             }
           >
             {index + 1}

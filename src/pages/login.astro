@@ -1,22 +1,30 @@
 ---
-import { FormLogin } from '../components/Forms';
-import Layout from '../layouts/Layout.astro';
+import { FormLogin } from "../components/Forms";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="mods-website">
-
-<div class="w-full min-h-[82.5vh] flex items-center ">
-    <div class="w-[800px] mx-auto gap-5 flex flex-row items-center  justify-center max-[900px]:flex-col-reverse">
-        <div class="w-1/2 max-[900px]:w-3/4 max-[500px]:w-[90%]">
-            <FormLogin client:load></FormLogin>
-        </div>
-        <div class="text-text_primary flex flex-col gap-2 w-1/2 p-8 max-[900px]:w-3/4  max-[500px]:w-[90%]     max-[900px]:p-6 max-[500px]:p-4  items-center ">
-            <p class="text-5xl font-bold max-[500px]:text-4xl   ">{"¡Inicia sesión ahora!"}</p>
-            <p class=" ">Si ya tienes una cuenta, inicia sesión con tus credenciales.</p>
-<p>Si no tienes una cuenta, por favor <span class="text-text_green underline cursor-pointer hover:opacity-90"  onclick="location='/register'"> haz clic aquí </span> para registrarte.</p>
-        </div>
+  <div class="w-full min-h-[82.5vh] flex items-center">
+    <div
+      class="w-[800px] mx-auto gap-5 flex flex-row items-center justify-center max-[900px]:flex-col-reverse"
+    >
+      <div class="w-1/2 max-[900px]:w-3/4 max-[500px]:w-[90%]">
+        <FormLogin client:load />
+      </div>
+      <div
+        class="text-text_primary flex flex-col gap-2 w-1/2 p-8 max-[900px]:w-3/4 max-[500px]:w-[90%] max-[900px]:p-6 max-[500px]:p-4 items-center"
+      >
+        <p class="text-5xl font-bold max-[500px]:text-4xl">{"¡Inicia sesión ahora!"}</p>
+        <p class="">Si ya tienes una cuenta, inicia sesión con tus credenciales.</p>
+        <p>
+          Si no tienes una cuenta, por favor <span
+            class="text-text_green underline cursor-pointer hover:opacity-90"
+            onclick="location='/register'"
+          >
+            haz clic aquí
+          </span> para registrarte.
+        </p>
+      </div>
     </div>
   </div>
-
-
 </Layout>

@@ -1,6 +1,6 @@
-import React from 'react';
-import { CardWeekMod } from './Cards';
-import dataWeekMod from '../constants/dataWeekMods.json';
+import React from "react";
+import { CardWeekMod } from "./Cards";
+import dataWeekMod from "../constants/dataWeekMods.json";
 const WeekMods = () => {
   return (
     <section className="w-[90%] mx-auto flex flex-col gap-8 items-center  max-[830px]:hidden">

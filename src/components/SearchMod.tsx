@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { CardMod } from './Cards';
-import dataMod from '../constants/dataMods.json';
-import { Pagination } from './Pagination';
+import React, { useState } from "react";
+import { CardMod } from "./Cards";
+import dataMod from "../constants/dataMods.json";
+import { Pagination } from "./Pagination";
 const SearchMod = () => {
   return (
     <section className="w-[90%] mx-auto flex flex-col gap-2 items-center">
@@ -22,10 +22,7 @@ const SearchMod = () => {
               <option value="Maggie">Maggie</option>
             </select>
 
-            <select
-              defaultValue="Más recientes"
-              className="select w-full max-fit bg-secundary"
-            >
+            <select defaultValue="Más recientes" className="select w-full max-fit bg-secundary">
               <option value="Más recientes" className="truncate">
                 Más recientes
               </option>

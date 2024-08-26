@@ -1,25 +1,26 @@
 ---
-import { FormRecoverPassword } from '../components/Forms';
-import Layout from '../layouts/Layout.astro';
+import { FormRecoverPassword } from "../components/Forms";
+import Layout from "../layouts/Layout.astro";
 import { FaKey } from "react-icons/fa6";
-
 ---
 
 <Layout title="Sons of the forest Mods">
+  <div
+    class="w-full min-h-[82.5vh] items-center justify-center flex flex-col gap-2 text-text_primary"
+  >
+    <div
+      class="w-[700px] mx-auto gap-5 flex flex-col items-center justify-center bg-secundary p-5 max-[700px]:w-full"
+    >
+      <div class="flex flex-row gap-4 items-center">
+        <h1 class="text-5xl max-sm:text-4xl max-[480px]:text-3xl max-[370px]:text-2xl">
+          Recuperar Cuenta
+        </h1>
+        <FaKey className="size-10 " />
+      </div>
 
-<div class="w-full min-h-[82.5vh] items-center  justify-center flex flex-col gap-2 text-text_primary">
- <div class="w-[700px] mx-auto gap-5 flex flex-col items-center  justify-center bg-secundary p-5 max-[700px]:w-full">
-<div class="flex flex-row gap-4 items-center">  
-    <h1 class="text-5xl  max-sm:text-4xl  max-[480px]:text-3xl max-[370px]:text-2xl  ">Recuperar Cuenta</h1>
-    <FaKey className='size-10 ' />
-</div>
- 
- <p>Ingresa el correo electrónico, para recuperar tu cuenta</p>
+      <p>Ingresa el correo electrónico, para recuperar tu cuenta</p>
 
-
- <FormRecoverPassword/>
-
- </div>
- 
-</div>
+      <FormRecoverPassword />
+    </div>
+  </div>
 </Layout>

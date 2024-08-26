@@ -1,16 +1,12 @@
 ---
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import SearchMod from '../components/SearchMod';
-import StatisticsCount from '../components/StatisticsCount';
-import WeekMods from '../components/WeekMods';
-import Layout from '../layouts/Layout.astro';
-
+import SearchMod from "../components/SearchMod";
+import StatisticsCount from "../components/StatisticsCount";
+import WeekMods from "../components/WeekMods";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="mods-website">
-		<WeekMods client:load></WeekMods>
-		<StatisticsCount></StatisticsCount>
-		<SearchMod client:load></SearchMod>	
-
+  <WeekMods client:load />
+  <StatisticsCount />
+  <SearchMod client:load />
 </Layout>

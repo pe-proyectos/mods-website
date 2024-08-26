@@ -1,33 +1,34 @@
 ---
-
-import Layout from '../layouts/Layout.astro';
-import dataMod from '../constants/dataMods.json';
-import { CardMod } from '../components/Cards';
-
+import Layout from "../layouts/Layout.astro";
+import dataMod from "../constants/dataMods.json";
+import { CardMod } from "../components/Cards";
 ---
 
 <Layout title="Red Loader - Sons of the forest">
+  <div class="max-w-[440px] mx-auto gap-14 flex flex-col max-[530px]:max-w-[300px]">
+    <img src={"/images/redlogo.png"} class="w-full object-cover" />
 
-<div class="max-w-[440px] mx-auto gap-14 flex flex-col max-[530px]:max-w-[300px]  ">
-<img src={"/images/redlogo.png"} class="w-full object-cover   " />
+    <p class="text-center text-text_primary">
+      {
+        "Todos los mods en este sitio están hechos para Red Loader. Ofrece un conjunto de características ricas para los modders y una integración más fluida del juego para los usuarios. Para comenzar, dirígete a la página del mod loader para instalación manual y documentación o visita la página del instalador para una instalación casi automática."
+      }
+    </p>
 
-<p class=" text-center text-text_primary ">
-{"Todos los mods en este sitio están hechos para Red Loader. Ofrece un conjunto de características ricas para los modders y una integración más fluida del juego para los usuarios. Para comenzar, dirígete a la página del mod loader para instalación manual y documentación o visita la página del instalador para una instalación casi automática."}   
-</p>
+    <div class="w-full flex flex-row items-center gap-5 justify-center max-[530px]:flex-col">
+      <button class="btn btn-success rounded-full min-w-[180px] max-[530px]:w-[90%]"
+        >Red Loader</button
+      >
+      <button class="btn btn-success rounded-full min-w-[180px] max-[530px]:w-[90%]"
+        >Red Mandager</button
+      >
+    </div>
+  </div>
 
-<div class="w-full flex flex-row items-center gap-5 justify-center max-[530px]:flex-col">
-<button class="btn btn-success rounded-full min-w-[180px] max-[530px]:w-[90%]">Red Loader</button>
-<button class="btn btn-success rounded-full min-w-[180px] max-[530px]:w-[90%]">Red Mandager</button>  
-</div>
-
-  
-
-</div>
-
-<div class="w-[80%] mx-auto flex flex-col gap-5 mt-5">
-<h2 class="text-text_primary text-3xl font-semibold mx-auto">Mods destacados</h2>
-<div class="flex flex-wrap justify-around  min-h-64 ">
-        {dataMod.map((item) => {
+  <div class="w-[80%] mx-auto flex flex-col gap-5 mt-5">
+    <h2 class="text-text_primary text-3xl font-semibold mx-auto">Mods destacados</h2>
+    <div class="flex flex-wrap justify-around min-h-64">
+      {
+        dataMod.map((item) => {
           return (
             <CardMod
               id={item.id}
@@ -42,16 +43,8 @@ import { CardMod } from '../components/Cards';
               nsfw={item.nsfw}
             />
           );
-        })}
-      </div>
-
-
-
-</div>
-
-
-
-
-
-
+        })
+      }
+    </div>
+  </div>
 </Layout>
