@@ -16,6 +16,7 @@
     "astro": "^4.14.4",
     "astro-bun-adapter": "^1.0.2",
     "autoprefixer": "^10.4.20",
+    "cookie-store": "^3.0.0",
     "daisyui": "^4.12.10",
     "jszip": "^3.10.1",
     "postcss": "^8.4.41",
