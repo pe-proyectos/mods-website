@@ -9,7 +9,7 @@ import Layout from "../layouts/Layout.astro";
       class="w-[800px] mx-auto gap-5 flex flex-row items-center justify-center max-[900px]:flex-col-reverse"
     >
       <div class="w-1/2 max-[900px]:w-3/4 max-[500px]:w-[90%]">
-        <FormLogin client:load />
+        <FormLogin client:only />
       </div>
       <div
         class="text-text_primary flex flex-col gap-2 w-1/2 p-8 max-[900px]:w-3/4 max-[500px]:w-[90%] max-[900px]:p-6 max-[500px]:p-4 items-center"
