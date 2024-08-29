@@ -2,6 +2,7 @@ import React, { useState, type ChangeEvent } from "react";
 import { navigateTo } from "../utils/navigate";
 import { CardMod } from "./Cards";
 import { validateZipFile } from "../utils/managmentFiles";
+import { callAPI } from "../utils/callApi";
 
 export const FormLogin: React.FC<{}> = () => {
   return (
@@ -44,13 +45,34 @@ export const FormLogin: React.FC<{}> = () => {
 };
 
 export const FormRegister: React.FC<{}> = () => {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  function register() {
+    callAPI("/api/auth/register", {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        username: name,
+        password: password,
+        confirm_password: confirmPassword,
+      }),
+    }).then(([error, result]) => {
+      if (result.registered == true) {
+        location.href = "/login";
+      }
+    });
+  }
   return (
-    <form className="bg-secundary w-full  flex flex-col gap-4 p-8 items-center max-[900px]:p-6 max-[500px]:p-4 ">
+    <div className="bg-secundary w-full  flex flex-col gap-4 p-8 items-center max-[900px]:p-6 max-[500px]:p-4 ">
       <label className="form-control w-full max-w-xs">
         <div className="label">
           <span className="label-text">Correo electrónico</span>
         </div>
         <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           type="text"
           placeholder="Ingresa tu correo electrónico"
           className="input input-bordered w-full max-w-xs bg-transparent rounded-full"
@@ -61,6 +83,8 @@ export const FormRegister: React.FC<{}> = () => {
           <span className="label-text">Nombre de usuario</span>
         </div>
         <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           type="text"
           placeholder="Ingresa tu correo nombre de usuario"
           className="input input-bordered w-full max-w-xs bg-transparent rounded-full"
@@ -71,6 +95,8 @@ export const FormRegister: React.FC<{}> = () => {
           <span className="label-text">Contraseña</span>
         </div>
         <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           type="password"
           placeholder="Ingresa tu correo contraseña"
           className="input input-bordered max-w-xs bg-transparent rounded-full w-[300px] max-[500px]:w-full   "
@@ -82,16 +108,21 @@ export const FormRegister: React.FC<{}> = () => {
           <span className="label-text">Confirmar contraseña</span>
         </div>
         <input
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
           type="password"
           placeholder="Repite tu contraseñ"
           className="input input-bordered max-w-xs bg-transparent rounded-full w-[300px] max-[500px]:w-full   "
         />
       </label>
 
-      <button className="btn btn-success bg-text_green hover:bg-[#18A048] w-[300px] rounded-full  max-[500px]:w-full  ">
+      <button
+        className="btn btn-success bg-text_green hover:bg-[#18A048] w-[300px] rounded-full  max-[500px]:w-full  "
+        onClick={() => register()}
+      >
         Inciar Sesión
       </button>
-    </form>
+    </div>
   );
 };
 
