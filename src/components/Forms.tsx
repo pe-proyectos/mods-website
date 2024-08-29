@@ -25,25 +25,25 @@ export const FormLogin: React.FC<{}> = () => {
     <form className="bg-secundary w-full  flex flex-col gap-4 p-8 items-center max-[900px]:p-6 max-[500px]:p-4 ">
       <label className="form-control w-full max-w-xs">
         <div className="label">
-          <span className="label-text">Correo electrónico</span>
+          <span className="label-text">Email</span>
         </div>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="text"
-          placeholder="Ingresa tu correo electrónico"
+          placeholder="Enter your email address"
           className="input input-bordered w-full max-w-xs bg-transparent rounded-full"
         />
       </label>
       <label className="form-control w-full max-w-xs">
         <div className="label">
-          <span className="label-text">Contraseña</span>
+          <span className="label-text">Password</span>
         </div>
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
-          placeholder="Ingresa tu correo contraseña"
+          placeholder="Enter your password"
           className="input input-bordered max-w-xs bg-transparent rounded-full w-[300px] max-[500px]:w-full   "
         />
       </label>
@@ -54,14 +54,14 @@ export const FormLogin: React.FC<{}> = () => {
           navigateTo("/register");
         }}
       >
-        {"!Regítrate Aquí"}
+        {"Register here!"}
       </p>
 
       <button
         className="btn btn-success bg-text_green hover:bg-[#18A048] w-[300px] rounded-full  max-[500px]:w-full  "
         onClick={() => login()}
       >
-        Inciar Sesión
+        Sign in
       </button>
     </form>
   );
@@ -91,50 +91,50 @@ export const FormRegister: React.FC<{}> = () => {
     <div className="bg-secundary w-full  flex flex-col gap-4 p-8 items-center max-[900px]:p-6 max-[500px]:p-4 ">
       <label className="form-control w-full max-w-xs">
         <div className="label">
-          <span className="label-text">Correo electrónico</span>
+          <span className="label-text">Email</span>
         </div>
         <input
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="text"
-          placeholder="Ingresa tu correo electrónico"
+          placeholder="Enter your email address"
           className="input input-bordered w-full max-w-xs bg-transparent rounded-full"
         />
       </label>
       <label className="form-control w-full max-w-xs">
         <div className="label">
-          <span className="label-text">Nombre de usuario</span>
+          <span className="label-text">Username</span>
         </div>
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
           type="text"
-          placeholder="Ingresa tu correo nombre de usuario"
+          placeholder="Enter your email username"
           className="input input-bordered w-full max-w-xs bg-transparent rounded-full"
         />
       </label>
       <label className="form-control w-full max-w-xs">
         <div className="label">
-          <span className="label-text">Contraseña</span>
+          <span className="label-text">Password</span>
         </div>
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
-          placeholder="Ingresa tu correo contraseña"
+          placeholder="Enter your password"
           className="input input-bordered max-w-xs bg-transparent rounded-full w-[300px] max-[500px]:w-full   "
         />
       </label>
 
       <label className="form-control w-full max-w-xs">
         <div className="label">
-          <span className="label-text">Confirmar contraseña</span>
+          <span className="label-text">Confirm password</span>
         </div>
         <input
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           type="password"
-          placeholder="Repite tu contraseñ"
+          placeholder="Enter your password again"
           className="input input-bordered max-w-xs bg-transparent rounded-full w-[300px] max-[500px]:w-full   "
         />
       </label>
@@ -143,7 +143,7 @@ export const FormRegister: React.FC<{}> = () => {
         className="btn btn-success bg-text_green hover:bg-[#18A048] w-[300px] rounded-full  max-[500px]:w-full  "
         onClick={() => register()}
       >
-        Inciar Sesión
+        Sign up
       </button>
     </div>
   );
