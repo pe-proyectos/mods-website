@@ -5,6 +5,22 @@ import { validateZipFile } from "../utils/managmentFiles";
 import { callAPI } from "../utils/callApi";
 
 export const FormLogin: React.FC<{}> = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  function login() {
+    callAPI("/api/auth/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    }).then(([error, result]) => {
+      if (result.token) {
+        localStorage.setItem("token", result.token);
+        location.href = "/mods";
+      }
+    });
+  }
   return (
     <form className="bg-secundary w-full  flex flex-col gap-4 p-8 items-center max-[900px]:p-6 max-[500px]:p-4 ">
       <label className="form-control w-full max-w-xs">
@@ -12,6 +28,8 @@ export const FormLogin: React.FC<{}> = () => {
           <span className="label-text">Correo electrónico</span>
         </div>
         <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           type="text"
           placeholder="Ingresa tu correo electrónico"
           className="input input-bordered w-full max-w-xs bg-transparent rounded-full"
@@ -22,6 +40,8 @@ export const FormLogin: React.FC<{}> = () => {
           <span className="label-text">Contraseña</span>
         </div>
         <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           type="password"
           placeholder="Ingresa tu correo contraseña"
           className="input input-bordered max-w-xs bg-transparent rounded-full w-[300px] max-[500px]:w-full   "
@@ -37,7 +57,10 @@ export const FormLogin: React.FC<{}> = () => {
         {"!Regítrate Aquí"}
       </p>
 
-      <button className="btn btn-success bg-text_green hover:bg-[#18A048] w-[300px] rounded-full  max-[500px]:w-full  ">
+      <button
+        className="btn btn-success bg-text_green hover:bg-[#18A048] w-[300px] rounded-full  max-[500px]:w-full  "
+        onClick={() => login()}
+      >
         Inciar Sesión
       </button>
     </form>
