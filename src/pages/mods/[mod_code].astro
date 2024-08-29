@@ -1,0 +1,13 @@
+---
+import { ModDetails } from "../../components/ModsDetails"
+import Layout from "../../layouts/Layout.astro";
+import { Modal } from "../../components/Modal";
+const {mod_code} = Astro.params; 
+---
+
+<Layout title="Son of the forest mods">
+  <Modal client:only 
+  />
+  <ModDetails mod_code={mod_code || ""} client:only
+  />
+</Layout>
