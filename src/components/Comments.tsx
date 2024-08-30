@@ -8,20 +8,20 @@ const Comments = () => {
           <div className="flex">
             <div className="">
               <div className="size-14 mr-2 rounded bg-neutral">
-                <span className="text-xl">TÚ</span>
+                <span className="text-xl">You</span>
               </div>
             </div>
             <div>
-              <p className="text-lg">Usuario loggeado</p>
-              <p className="text-sm">Hace 5 días</p>
+              <p className="text-lg">Logged in user</p>
+              <p className="text-sm">5 days ago</p>
             </div>
           </div>
           <textarea
             className="textarea textarea-bordered"
-            placeholder="Escribe un comentario..."
+            placeholder="Leave a comment..."
           ></textarea>
           <div className="card-actions justify-end">
-            <button className="btn btn-sm">Comentar</button>
+            <button className="btn btn-sm">Comment</button>
           </div>
         </div>
       </div>
@@ -36,8 +36,8 @@ const Comments = () => {
               />
             </div>
             <div>
-              <p className="text-lg">Elsa Capuntas</p>
-              <p className="text-sm">Hace 5 días</p>
+              <p className="text-lg">The pencil sharpener</p>
+              <p className="text-sm">5 days ago</p>
             </div>
           </div>
           <p>
@@ -49,15 +49,15 @@ const Comments = () => {
             <div className="collapse">
               <input type="checkbox" />
               <div className="collapse-title text-sm p-1">
-                <button className="btn btn-sm">Responder</button>
+                <button className="btn btn-sm">Reply</button>
               </div>
               <div className="collapse-content p-0">
                 <textarea
                   className="textarea textarea-bordered w-full"
-                  placeholder="Escribe un comentario..."
+                  placeholder="Leave a comment..."
                 ></textarea>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-sm">Responder</button>
+                  <button className="btn btn-sm">Reply</button>
                 </div>
               </div>
             </div>

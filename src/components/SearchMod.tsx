@@ -8,13 +8,13 @@ const SearchMod = () => {
       <div className="flex flex-col w-full max-w-[630px] gap-3  items-center">
         <input
           type="text"
-          placeholder="Escribe aquí"
+          placeholder="Search here"
           className="input input-bordered input-success py-2  w-full  max-[700px]:w-[90%]  rounded-full bg-transparent"
         />
         <div className="flex flex-row gap-2 max-[700px]:flex-col ">
           <div className="flex flex-row gap-2  max-[700px]:justify-center">
             <select defaultValue="Todas las categorías" className="select w-fit bg-secundary">
-              <option value="Todas las categorías">Todas las categorías</option>
+              <option value="Todas las categorías">All categories</option>
               <option value="Homer">Homer</option>
               <option value="Marge">Marge</option>
               <option value="Bart">Bart</option>
@@ -24,7 +24,7 @@ const SearchMod = () => {
 
             <select defaultValue="Más recientes" className="select w-full max-fit bg-secundary">
               <option value="Más recientes" className="truncate">
-                Más recientes
+                Latest
               </option>
               <option value="Homer">Homer</option>
               <option value="Marge">Marge</option>
@@ -36,7 +36,7 @@ const SearchMod = () => {
           <div className="flex flex-row gap-2  max-[700px]:justify-center">
             <div className="form-control w-fit bg-secundary  rounded-md px-1 ">
               <label className="label cursor-pointer flex gap-2  h-full">
-                <span className="label-text truncate ">No aprobados</span>
+                <span className="label-text truncate ">Not approved</span>
                 <input type="checkbox" className="toggle toggle-accent" />
               </label>
             </div>

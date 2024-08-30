@@ -15,9 +15,9 @@ export const TableHistoryVersion: React.FC<TableHistoryVersionComponentProps> = 
     <table className="size-full border-none bg-secundary text-text_primary ">
       <thead>
         <tr>
-          <th className="px-4 py-2 border-none opacity-70">Versión</th>
-          <th className="px-4 py-2 border-none opacity-70">Registro de cambios</th>
-          <th className="px-4 py-2 border-none opacity-70">Descargas</th>
+          <th className="px-4 py-2 border-none opacity-70">Version</th>
+          <th className="px-4 py-2 border-none opacity-70">Changelog</th>
+          <th className="px-4 py-2 border-none opacity-70">Downloads</th>
         </tr>
       </thead>
       <tbody>

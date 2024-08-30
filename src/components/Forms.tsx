@@ -165,11 +165,11 @@ export const FormUploadMod: React.FC<{}> = () => {
     img: "/images/standarImg.png",
     owner: "owner",
     version: "1.0.0",
-    abstract: "Esta es una descripción del mod.",
+    abstract: "This is a description of the mod.",
     downloadNumbers: 0,
-    timeAgo: "recien lanzado",
+    timeAgo: "just released",
   });
-  const [type, setType] = useState("Categoría");
+  const [type, setType] = useState("Category");
   const [showAccordion, setShowAccordion] = useState(false);
   const [nsfw, setNsfw] = useState(false);
   const [description, setDescription] = useState("");
@@ -197,11 +197,11 @@ export const FormUploadMod: React.FC<{}> = () => {
       try {
         const isValid = await validateZipFile(file);
 
-        if (!isValid) alert("El archivo .zip no contiene manifest.json");
+        if (!isValid) alert("The .zip file does not contain manifest.json");
 
         setShowAccordion(true);
       } catch {
-        alert("Error al procesar el archivo .zip");
+        alert("Error processing file .zip");
       }
     }
   };
@@ -214,7 +214,7 @@ export const FormUploadMod: React.FC<{}> = () => {
       }
     >
       <div className=" flex flex-col gap-5 w-1/2  mx-auto  max-[800px]:w-[60%]  max-[700px]:w-[70%]  max-[700px]:p-4 max-[550px]:w-[90%]  px-8 py-2 bg-secundary">
-        <p className="text-text_primary font-semibold text-xl ml-2">Subir mod (.zip) </p>
+        <p className="text-text_primary font-semibold text-xl ml-2">Upload mod (.zip) </p>
         <input
           type="file"
           className="file-input file-input-bordered file-input-success w-full max-w-xs   rounded-full "
@@ -225,16 +225,16 @@ export const FormUploadMod: React.FC<{}> = () => {
           <div className="join join-vertical w-full text-text_primary">
             <div className="collapse collapse-arrow join-item border-base-300 border">
               <input type="radio" name="my-accordion-4" defaultChecked />
-              <div className="collapse-title text-xl font-medium">Información básica</div>
+              <div className="collapse-title text-xl font-medium">Basic information</div>
               <div className="collapse-content flex flex-col gap-2">
                 <label className="form-control w-full max-w-xs">
                   <div className="label">
-                    <span className="label-text">Nombre</span>
+                    <span className="label-text">Name</span>
                   </div>
                   <input
                     type="text"
                     name="title"
-                    placeholder="Ingrese la nombre del mod"
+                    placeholder="Enter the mod name"
                     className="input input-bordered bg-transparent rounded-full"
                     onChange={handleChange}
                     value={inputValuesMod.title}
@@ -243,14 +243,14 @@ export const FormUploadMod: React.FC<{}> = () => {
 
                 <label className="form-control w-full max-w-xs">
                   <div className="label">
-                    <span className="label-text">Descripción corta</span>
+                    <span className="label-text">Short description</span>
                     <span className="label-text text-xs">(máx: 100 caracteres)</span>
                   </div>
 
                   <input
                     type="text"
                     name="abstract"
-                    placeholder="Ingrese la descripción del mod"
+                    placeholder="Enter the mod description"
                     className="input input-bordered bg-transparent rounded-full"
                     onChange={handleChange}
                     value={inputValuesMod.abstract}
@@ -258,13 +258,13 @@ export const FormUploadMod: React.FC<{}> = () => {
                 </label>
                 <label className="form-control">
                   <div className="label">
-                    <span className="label-text">Descripción</span>
+                    <span className="label-text">Description</span>
                     <span className="label-text-alt">{`${description.length}/2000 caracteres`}</span>
                   </div>
                   <textarea
                     className="textarea textarea-bordered h-24 bg-transparent rounded-3xl"
                     name="description"
-                    placeholder="Ingrese la descripción del mod"
+                    placeholder="Enter the mod description"
                     onChange={handleChangeTextArea}
                     value={description}
                   ></textarea>
@@ -273,11 +273,11 @@ export const FormUploadMod: React.FC<{}> = () => {
             </div>
             <div className="collapse collapse-arrow join-item border-base-300 border">
               <input type="radio" name="my-accordion-4" />
-              <div className="collapse-title text-xl font-medium">Categoría</div>
+              <div className="collapse-title text-xl font-medium">Category</div>
               <div className="collapse-content flex flex-col gap-2">
                 <div className="form-control">
                   <label className="label cursor-pointer">
-                    <span className="label-text">Contiene contenido NSFW</span>
+                    <span className="label-text">Contains content NSFW</span>
                     <input
                       type="checkbox"
                       className="toggle  toggle-accent"
@@ -289,14 +289,14 @@ export const FormUploadMod: React.FC<{}> = () => {
 
                 <label className="form-control w-full max-w-xs">
                   <div className="label">
-                    <span className="label-text">Categoría</span>
+                    <span className="label-text">Category</span>
                   </div>
                   <select
                     className="select select-bordered w-full max-w-xs bg-transparent rounded-full"
                     onChange={handleSelectChange}
                   >
                     <option disabled selected>
-                      Seleccione una categoria
+                      Select a category
                     </option>
                     <option>Library</option>
                     <option>Misc</option>
@@ -308,12 +308,12 @@ export const FormUploadMod: React.FC<{}> = () => {
             </div>
             <div className="collapse collapse-arrow join-item border-base-300 border">
               <input type="radio" name="my-accordion-4" />
-              <div className="collapse-title text-xl font-medium">Imágenes</div>
+              <div className="collapse-title text-xl font-medium">Images</div>
               <div className="collapse-content flex flex-col gap-1">
-                <p className="text-xs">Las imágenes deben estar en formato .png, .jpeg o .gif</p>
+                <p className="text-xs">Images must be in format .png, .jpeg o .gif</p>
                 <label className="form-control w-full max-w-xs">
                   <div className="label">
-                    <span className="label-text">Miniatura</span>
+                    <span className="label-text">Miniature</span>
                   </div>
                   <input
                     type="file"
@@ -322,13 +322,13 @@ export const FormUploadMod: React.FC<{}> = () => {
                   />
                 </label>
                 <p className="text-xs mt-2">
-                  La resolución de la miniatura del mod debe ser 2560 x 1440 o 1080 x 608
+                  The resolution of the mod thumbnail should be 2560 x 1440 or 1080 x 608
                 </p>
                 <a className="text-[#36D376] hover:underline cursor-pointer">
-                  Descargar plantilla de miniatura
+                  Download thumbnail template
                 </a>
                 <a className="text-[rgb(250,93,255)] hover:underline cursor-pointer">
-                  Descargar plantilla de miniatura HD
+                  Download HD Thumbnail Template
                 </a>
               </div>
             </div>
@@ -342,23 +342,23 @@ export const FormUploadMod: React.FC<{}> = () => {
           tabIndex={-1}
           role="button"
         >
-          Enviar
+          Send
         </button>
       </div>
       <div className="text-text_primary flex flex-col gap-4 w-1/2   max-[900px]:w-3/4  max-[500px]:w-[90%]   max-[900px]:p-6 max-[500px]:p-4  max-[900px]:items-center ">
         <p className="text-5xl font-bold max-[500px]:text-4xl   ">{"Subir un mod"}</p>
-        <p className="text-text_primary mt-1">Completa los campos para ver cómo se verá tu mod</p>
+        <p className="text-text_primary mt-1">Fill out the fields to see what your mod will look like</p>
         <CardMod
           id={"-1"}
           title={inputValuesMod.title !== "" ? inputValuesMod.title : "Mod Name"}
-          type={type !== "" ? type : "categoria"}
+          type={type !== "" ? type : "category"}
           img={inputValuesMod.img !== "" ? inputValuesMod.img : "/images/standarImg.png"}
           owner={inputValuesMod.owner}
           version={inputValuesMod.version}
           abstract={
             inputValuesMod.abstract !== ""
               ? inputValuesMod.abstract
-              : "Esta es una descripción del mod."
+              : "This is a description of the mod."
           }
           downloadNumbers={inputValuesMod.downloadNumbers}
           timeAgo={inputValuesMod.timeAgo}
@@ -367,7 +367,7 @@ export const FormUploadMod: React.FC<{}> = () => {
 
         <label className="form-control w-full max-w-[370px] ">
           <div className="label">
-            <span className="label-text">Vista previa de la descripción del mod</span>
+            <span className="label-text">Mod Description Preview</span>
           </div>
           <input
             type="text"
@@ -388,16 +388,16 @@ export const FormRecoverPassword: React.FC<{}> = () => {
     <form className="bg-secundary  w-full flex flex-col gap-8 p-8 items-center max-[900px]:p-6 max-[500px]:p-4  ">
       <label className="form-control w-full m">
         <div className="label">
-          <span className="label-text">Correo electrónico</span>
+          <span className="label-text">Email</span>
         </div>
         <input
           type="text"
-          placeholder="Ingresa tu correo electrónico"
+          placeholder="Enter your email"
           className="input input-bordered w-full bg-transparent rounded-full"
         />
       </label>
       <button className="btn btn-success bg-text_green hover:bg-[#18A048] w-[300px] rounded-full  max-[500px]:w-full  ">
-        Recuperar Cuenta
+        Recover Account
       </button>
     </form>
   );
