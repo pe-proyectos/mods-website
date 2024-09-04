@@ -7,7 +7,7 @@ export function Modal() {
     <dialog id="modalNSFW" className={showModal ? "modal modal-open" : "modal"}>
       <div className="modal-box text-center glass">
         <div>
-          <h3 className="text-3xl font-bold text-white">¡Contenido Sensible!</h3>
+          <h3 className="text-3xl font-bold text-white">Sensitive Content!</h3>
           <svg
             className="w-24 h-24 mx-auto block"
             viewBox="0 0 24 24"
@@ -31,8 +31,8 @@ export function Modal() {
           </svg>
         </div>
         <p className="py-4 text-white">
-          Advertencia: Estos mods contienen imágenes y escenas que pueden resultar perturbadoras
-          para algunos usuarios. Recomendado para mayores de 18 años.
+          Warning: These mods contain images and scenes that may be disturbing
+          for some users. Recommended for people over 18 years old.
         </p>
         <div className="modal-action">
           <button

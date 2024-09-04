@@ -62,12 +62,12 @@ export const CardMod: React.FC<CardModProps> = ({
               if (id !== "-1") alert(`ID: ${id}`);
             }}
           >
-            Ver más
+            View more
           </button>
         </div>
         <div className="flex flex-row gap-3 w-full justify-end text-[11px]">
           <p className="flex flex-row gap-2 text-btn_primary">
-            {`${downloadNumbers} descargas`}
+            {`${downloadNumbers} downloads`}
             <HiMiniArrowTrendingUp className="size-4" />
           </p>
           <p className="flex flex-row gap-2">
@@ -133,7 +133,7 @@ export const CardWeekMod: React.FC<CardWeekModProps> = ({
 
         <p className="text-[15px] text-text_primary ">
           <span className="text-text_green "> {`${downloadNumbersWeek} `}</span>
-          descargas en la última semana
+          downloads in the last week
           <span className="text-text_greenBlue">{` (${downloadNumbersTotal} total)`}</span>
         </p>
       </div>
@@ -171,24 +171,24 @@ export const CardDownloadMod: React.FC<CardDownloadModProps> = ({
       <p className="max-[540px]:text-center">{abstract}</p>
       <div className="flex flex-row items-center gap-5 justify-center   max-[540px]:flex-col max-[540px]:w-full ">
         <button className="btn btn-outline btn-accent rounded-full min-w-[200px]  max-[540px]:w-3/4">
-          Descarga Directa
+          Direct Download
         </button>
         <button className="btn btn-outline btn-success rounded-full min-w-[200px] max-[540px]:w-3/4">
-          Insalación en un click
+          One-click installation
         </button>
       </div>
       <div className="flex flex-row gap-3  text-xs max-[540px]:flex-col  ">
         <div className="flex flex-row gap-3 ">
           <p className="flex flex-row gap-2 text-btn_primary">
             <HiMiniArrowTrendingUp className="size-4 " />
-            {`${downloadNumbers} descargas`}
+            {`${downloadNumbers} downloads`}
           </p>
-          <p className="flex flex-row gap-2 text-text_greenBlue">{`${followers} seguidores`}</p>
+          <p className="flex flex-row gap-2 text-text_greenBlue">{`${followers} followers`}</p>
         </div>
 
         <p className="flex flex-row gap-2 opacity-70">
           <PiTimerFill className="size-4 " />
-          {`Versión  ${currentVersion} lanzado ${timeAgo} ago`}
+          {`Version  ${currentVersion} released ${timeAgo} ago`}
         </p>
       </div>
     </div>

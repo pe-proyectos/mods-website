@@ -97,7 +97,7 @@ const Header: React.FC<Props> = ({ title, logoSmImageUrl, logoMdImageUrl, logoLg
                   navigateTo("/login");
                 }}
               >
-                {"Iniciar sesión"}
+                {"Login"}
               </a>
             </li>
             <li className="font-normal text-[14px] ">
@@ -106,7 +106,7 @@ const Header: React.FC<Props> = ({ title, logoSmImageUrl, logoMdImageUrl, logoLg
                   navigateTo("/register");
                 }}
               >
-                {"Registrarse"}
+                {"Register"}
               </a>
             </li>
           </ul>
