@@ -16,7 +16,7 @@ const StatisticsCount = () => {
       setDevelopers(stat.developers);
     }
     )
-  },)
+  },[])
 
   return (
     <div className="bg-[#171212] w-full max-w-[630px] mx-auto flex flex-row gap-2 justify-around max-sm:flex-col max-sm:w-1/2 max-[500px]:w-3/4 ">
