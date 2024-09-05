@@ -34,16 +34,11 @@ const Header: React.FC<Props> = ({ title, logoSmImageUrl, logoMdImageUrl, logoLg
       <div className="flex flex-row items-center  text-text_primary font-semibold text-[14px] h-full">
         <a
           className="cursor-pointer hover:bg-shadow px-5 max-sm:px-2.5  h-full content-center rounded-md flex flex-row gap-2 items-center"
-          onClick={() => {
-            navigateTo("/loader");
-          }}
+          href="/loader"
         >
           <img
             src="/images/redlogo.png"
             className="w-14 hidden max-sm:block"
-            onClick={() => {
-              navigateTo("/register");
-            }}
           />
           <p className="max-sm:hidden">Red Loader</p>
         </a>
@@ -93,18 +88,14 @@ const Header: React.FC<Props> = ({ title, logoSmImageUrl, logoMdImageUrl, logoLg
           >
             <li className="font-normal text-[14px] ">
               <a
-                onClick={() => {
-                  navigateTo("/login");
-                }}
+                href="/login"
               >
                 {"Login"}
               </a>
             </li>
             <li className="font-normal text-[14px] ">
               <a
-                onClick={() => {
-                  navigateTo("/register");
-                }}
+                href="/register"
               >
                 {"Register"}
               </a>
