@@ -36,7 +36,6 @@ export const ModDetails: React.FC<ModDetailsProps> = ({mod_code}) => {
   React.useEffect(() => {
     callAPI('/api/mods/' + mod_code)
     .then(([error, info]) => {
-      console.log(info)
       setId(info.id);
       setName(info.name);
       setSlug(info.slug);

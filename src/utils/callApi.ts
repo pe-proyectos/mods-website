@@ -6,6 +6,7 @@ async function getIpFromCloudflare() {
   let ipRegex = /[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}/;
   return data.match(ipRegex)?.[0];
 }
+
 export const callAPI = async <T = any>(
   url: string,
   fetchOptions?: Partial<RequestInit> & { includeIp?: any }
@@ -31,7 +32,7 @@ export const callAPI = async <T = any>(
     }
     const data: T = await response.json();
     return [null, data];
-  } catch (error) {
+  } catch (error: any) {
     console.warn(
       `callAPI failed at ${url} with ${fetchOptions ? JSON.stringify(fetchOptions) : "{}"} error message: ${error?.message}`
     );

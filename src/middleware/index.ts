@@ -1,30 +1,8 @@
 import { defineMiddleware } from "astro:middleware";
+import { generateServerCallAPI } from "../utils/serverCallApi";
 
 export const onRequest = defineMiddleware(async (context, next) => {
-  context.locals.callAPI = async <T = any>(
-    url: string,
-    fetchOptions?: Partial<RequestInit> & { includeIp?: any }
-  ): Promise<[null, T] | [Error, null]> => {
-    try {
-      const API_URL = Bun.env["PUBLIC_API_URL"] || "";
-      const response = await fetch(API_URL + url, {
-        ...(fetchOptions || {}),
-        headers: {
-          domain: Bun.env["PUBLIC_OVERRIDE_DOMAIN"] || context.url.hostname,
-          "Content-Type": "application/json",
-          Authorization: context.locals.token ? `Bearer ${context.locals.token}` : "",
-          ...(fetchOptions?.headers || {}),
-        },
-      });
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data: T = await response.json();
-      return [null, data];
-    } catch (error) {
-      return [error instanceof Error ? error : new Error("An unknown error occurred"), null];
-    }
-  };
+  context.locals.callAPI = generateServerCallAPI(context);
 
   try {
     context.locals.token = context.cookies.get("token")?.value;
@@ -39,7 +17,14 @@ export const onRequest = defineMiddleware(async (context, next) => {
         `/api/game?domain=${Bun.env["PUBLIC_OVERRIDE_DOMAIN"] || context.url.hostname}`
       ),
     ]);
-    
+
+    if (context.url.pathname === "/ads.txt") {
+      const adstxt = gameInfo?.adstxt || "";
+      return new Response(adstxt, {
+        headers: { "Content-Type": "text/plain" },
+      });
+    }
+
     if (gameInfoError) {
         throw new Error("Not found");
     }
