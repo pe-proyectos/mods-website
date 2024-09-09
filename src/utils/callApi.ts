@@ -31,7 +31,7 @@ export const callAPI = async <T = any>(
     }
     const data: T = await response.json();
     return [null, data];
-  } catch (error) {
+  } catch (error:any) {
     console.warn(
       `callAPI failed at ${url} with ${fetchOptions ? JSON.stringify(fetchOptions) : "{}"} error message: ${error?.message}`
     );

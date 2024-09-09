@@ -1,8 +1,18 @@
 import React, { useState } from "react";
 import { CardMod } from "./Cards";
-import dataMod from "../constants/dataMods.json";
 import { Pagination } from "./Pagination";
+import { callAPI } from "../utils/callApi";
+
 const SearchMod = () => {
+  const [dataMod, setDataMod] = useState([]);
+
+  React.useEffect(() => {//revisar la ruta del call api
+    callAPI("/api/mods/find").then(([error, data]) => {
+      console.log(data);
+      setDataMod(data);
+    });
+  },[]);
+
   return (
     <section className="w-[90%] mx-auto flex flex-col gap-2 items-center">
       <div className="flex flex-col w-full max-w-[630px] gap-3  items-center">
@@ -53,7 +63,7 @@ const SearchMod = () => {
       <Pagination total={5} selected={1} />
 
       <div className="w-[88%]  mt-5 grid grid-flow-row gap-x-2 gap-y-5  grid-cols-3  max-[1450px]:w-full  max-xl:w-[75%]   max-xl:grid-cols-2   max-[1150px]:w-[85%] max-[1000px]:w-[95%] max-[900px]:grid-cols-1      justify-items-center">
-        {dataMod.map((item) => {
+        {dataMod.map((item:any) => {
           return (
             <CardMod
               key={item.id}
