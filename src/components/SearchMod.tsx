@@ -67,6 +67,7 @@ const SearchMod = () => {
           return (
             <CardMod
               key={item.code}
+              code={item.code}
               title={item.name}
               type={item.type}
               img={item.thumbnail_url}
