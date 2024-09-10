@@ -173,9 +173,6 @@ export const CardDownloadMod: React.FC<CardDownloadModProps> = ({
         <button className="btn btn-outline btn-accent rounded-full min-w-[200px]  max-[540px]:w-3/4">
           Direct Download
         </button>
-        <button className="btn btn-outline btn-success rounded-full min-w-[200px] max-[540px]:w-3/4">
-          One-click installation
-        </button>
       </div>
       <div className="flex flex-row gap-3  text-xs max-[540px]:flex-col  ">
         <div className="flex flex-row gap-3 ">
