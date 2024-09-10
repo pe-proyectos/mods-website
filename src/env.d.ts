@@ -36,6 +36,7 @@ declare namespace App {
       xUrl: string;
       instagramUrl: string;
       discordUrl: string;
+      adstxt: string;
       modLoaders: Array<{
         id: number;
         code: string;

@@ -25,9 +25,6 @@ interface Props {
   }>;
 }
 const Footer: React.FC<Props> = (props) => {
-  console.log("props");
-  console.log(props);
-
   const linkTo = (title: string, url: string) => {
     return (
       <a className="hover:underline cursor-pointer" href={url} target="_blank">
