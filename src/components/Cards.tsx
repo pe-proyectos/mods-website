@@ -3,7 +3,7 @@ import { PiTimerFill } from "react-icons/pi";
 import useHover from "../utils/useHover";
 
 interface CardModProps {
-  id: string;
+  code: string;
   title: string;
   type: string;
   img: string;
@@ -16,7 +16,7 @@ interface CardModProps {
 }
 
 export const CardMod: React.FC<CardModProps> = ({
-  id,
+  code,
   title,
   type,
   img,
@@ -59,7 +59,7 @@ export const CardMod: React.FC<CardModProps> = ({
           <button
             className="btn btn-outline btn-accent py-1 min-h-[2.5rem] h-[2.5rem]"
             onClick={() => {
-              if (id !== "-1") alert(`ID: ${id}`);
+              alert(`code: ${code}`);
             }}
           >
             View more

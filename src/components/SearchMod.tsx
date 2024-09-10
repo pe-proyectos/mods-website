@@ -7,9 +7,9 @@ const SearchMod = () => {
   const [dataMod, setDataMod] = useState([]);
 
   React.useEffect(() => {//revisar la ruta del call api
-    callAPI("/api/mods/find").then(([error, data]) => {
+    callAPI("/api/mods").then(([error, data]) => {
       console.log(data);
-      setDataMod(data);
+      setDataMod(data.mods);
     });
   },[]);
 
@@ -66,17 +66,16 @@ const SearchMod = () => {
         {dataMod.map((item:any) => {
           return (
             <CardMod
-              key={item.id}
-              id={item.id}
-              title={item.title}
+              key={item.code}
+              title={item.name}
               type={item.type}
-              img={item.img}
-              owner={item.owner}
+              img={item.thumbnail_url}
+              owner={item.user_name}
               version={item.score}
-              abstract={item.abstract}
-              downloadNumbers={item.downloadNumbers}
-              timeAgo={item.timeAgo}
-              nsfw={item.nsfw}
+              abstract={item.short_description}
+              downloadNumbers={item.downloads}
+              timeAgo={item.time_ago}
+              nsfw={item.isNSFW}
             />
           );
         })}
